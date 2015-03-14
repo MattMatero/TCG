@@ -1,0 +1,6 @@
+Tue, 03 Mar 2015 14:45:38 -0500
+README.rdoc	Wed, 25 Feb 2015 11:43:16 -0500
+app/controllers/application_controller.rb	Wed, 25 Feb 2015 11:43:17 -0500
+app/controllers/home_controller.rb	Wed, 25 Feb 2015 16:48:14 -0500
+app/helpers/application_helper.rb	Wed, 25 Feb 2015 11:43:17 -0500
+app/models/user.rb	Wed, 25 Feb 2015 13:12:32 -0500
