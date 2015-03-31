@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
-  devise_for :users
-  root 'home#index'
+  resources :cards
 
-  get 'home/search'
+  devise_for :users
+
+  root 'home#index'
 
   get 'home/contact'
 
   get 'home/about'
-   
+ 
 end

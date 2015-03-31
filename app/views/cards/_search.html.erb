@@ -1,0 +1,22 @@
+<%= form_tag("./search", method: "get") do %>
+  <%= label_tag(:name, "Name:") %>
+  <%= text_field_tag(:name) %>
+  <br/>
+  <%= label_tag(:set, "Set:") %>
+  <%= text_field_tag(:set) %>
+  <br/>
+  <%= radio_button_tag(:color, "Color") %>
+  <%= label_tag(:red, "Red") %>
+  <%= radio_button_tag(:color, "Color") %>
+  <%= label_tag(:white, "White") %>
+  <%= radio_button_tag(:color, "Color") %>
+  <%= label_tag(:green, "Green") %>
+  <br/>
+  <%= radio_button_tag(:color, "Color") %>
+  <%= label_tag(:blue, "Blue") %>
+  <%= radio_button_tag(:color, "Color") %>
+  <%= label_tag(:black, "Black") %>
+  <br/>
+  <%= submit_tag("Search") %>
+<% end %>
+
