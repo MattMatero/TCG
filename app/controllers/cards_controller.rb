@@ -74,7 +74,7 @@ class CardsController < ApplicationController
   def self.query(params)
      @Card = Card.find_by name: params[:name]
      @Card.name
-     @Card.
+     
   end 
 
   private

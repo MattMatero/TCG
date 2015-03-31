@@ -4,10 +4,10 @@ class Card < ActiveRecord::Base
 
 
   
-  private
+ private
 
-  def person_params
+ def card_params
     params.require(:Card).permit(:name, :set, :color)
-  end
+ end
 
 end
