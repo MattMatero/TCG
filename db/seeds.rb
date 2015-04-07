@@ -7,9 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 c = Card.new
-c.name = "testing card"
-c.set = "best set"
-c.price = 73.25
-c.Color = "white"
+c.name = "bluecard"
+c.set = "worst set"
+c.price = 50
+c.Color = "blue"
 
 c.save!
