@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   get 'home/contact'
 
   get 'home/about'
+
+  get 'cards/office'
  
 end

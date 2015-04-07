@@ -21,6 +21,12 @@ class CardsController < ApplicationController
     render 'search'
   end
 
+  #GET /cards/office
+  def office
+    @card = Card.new
+    render 'office'
+  end
+
 
   # GET /cards/new
   def new
