@@ -1,2 +1,11 @@
-<p>Searching</p>
-<p>Card Name: <%= CardsController.query(params) %></p>
+<p>Results...</p>
+<ul>
+<% @cards = CardsController.query(params)%>
+<% @cards.each do |card| %>
+<li>Card Name: <%= card.name %></li>
+<li>Card Set: <%= card.set %></li>
+<li>Card Price: <%= card.price %></li>
+<li>Card Color: <%= card.Color %></li>
+<br/> 
+<% end %>
+</ul>

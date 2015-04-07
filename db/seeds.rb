@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+c = Card.new
+c.name = "testing card"
+c.set = "best set"
+c.price = 73.25
+c.Color = "white"
+
+c.save!

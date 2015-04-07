@@ -72,9 +72,16 @@ class CardsController < ApplicationController
   end
 
   def self.query(params)
-     @Card = Card.find_by name: params[:name]
-     @Card.name
-     
+    if params[:name].present?
+      @Card = Card.where(:name => params[:name])
+    elsif params[:set].present? && params[:color].present?
+      @Card = Card.where(:set => params[:set]).where(:color => params[:color])
+    elsif params[:set].present?
+      @Card = Card.where(:set => params[:set])
+    else
+      @Card = Card.where(:color => params[:color])
+    end
+    @Card
   end 
 
   private
@@ -87,6 +94,6 @@ class CardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def card_params
-      params.require(:card).permit(:name, :id, :price, :set)
+      params.require(:card).permit(:name, :id, :price, :set, :Color)
     end
 end
