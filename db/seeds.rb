@@ -8,8 +8,40 @@
 
 c = Card.new
 c.name = "bluecard"
-c.set = "worst set"
+c.set = "best set"
 c.price = 50
 c.Color = "blue"
+
+c.save!
+
+c = Card.new
+c.name = "redcard"
+c.set = "worst set"
+c.price = 50.32
+c.Color = "red"
+
+c.save!
+
+c = Card.new
+c.name = "whitecard"
+c.set = "worst set"
+c.price = 50
+c.Color = "white"
+
+c.save!
+
+c = Card.new
+c.name = "greencard"
+c.set = "best set"
+c.price = 15
+c.Color = "green"
+
+c.save!
+
+c = Card.new
+c.name = "blackcard"
+c.set = "worst set"
+c.price = 10
+c.Color = "black"
 
 c.save!
