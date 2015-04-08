@@ -10,10 +10,16 @@ class CardsController < ApplicationController
   # GET /cards/1
   # GET /cards/1.json
   def show
-    if(!params[:id].is_a? Integer)
+    if(params[:id].to_s == 'office')
+      @card = Card.new
+      render 'office'
+      return
+    elsif(params[:id].to_s == 'search')
       render 'search'
+      return
     end
 
+    redirect_to action: "index"
   end
   
   def search
