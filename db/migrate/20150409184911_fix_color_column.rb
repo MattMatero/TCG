@@ -1,11 +1,7 @@
 class FixColorColumn < ActiveRecord::Migration
   class FixColumnName < ActiveRecord::Migration
-  def self.up
-    rename_column :cards, :Color, :color
-  end
-
-  def self.down
-    rename_column :cards, :color, :Color
+  def change
+  	rename_column :Cards, :Color, :color
   end
 end
 end
