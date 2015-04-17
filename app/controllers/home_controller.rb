@@ -10,5 +10,8 @@ class HomeController < ApplicationController
 
   def profile
   end
+
+  def photopicker
+  end
   
 end

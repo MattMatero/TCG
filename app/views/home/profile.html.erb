@@ -1,7 +1,29 @@
+<div id="Profile Header">
 <% if current_user.username[-1,1].downcase != 's' %>
 	<h1><%="#{current_user.username}'s "%>Profile</h1>
 <% else %>
 	<h1><%="#{current_user.username}' "%>Profile</h1>
 <% end %>
+</div>
+
+<span id="profile img">
+	<!-- if user doesn't have picture use default  -->
+	<% if current_user.image.nil?%>
+		<%= image_tag "profile2.png" %>
+	<% else %>
+		<%= image_tag "#{current_user.image}" %>
+	<% end %>
+</span>
+<div id="button">
+	<%= link_to 'Change Picture', home_photopicker_path %>
+</div>
+<div id="decks">
+	<ol>
+		<li>Deck 1</li>
+		<li>Deck 2</li>
+		<li>Deck 3</li>
+	</ol>
+</div>
+
 
 

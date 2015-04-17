@@ -13,5 +13,7 @@ Rails.application.routes.draw do
   get 'home/profile'
 
   get 'cards/office'
+
+  get 'home/photopicker'
  
 end
