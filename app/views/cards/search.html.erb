@@ -1,11 +1,17 @@
 <p>Results...</p>
-<ul>
-<% @cards = CardsController.query(params)%>
-<% @cards.each do |card| %>
-<li>Card Name: <%= card.name %></li>
-<li>Card Set: <%= card.set %></li>
-<li>Card Price: <%= card.price %></li>
-<li>Card Color: <%= card.color %></li>
-<br/> 
-<% end %>
-</ul>
+
+<table class = "table table-striped">
+	<th>Name</th>
+	<th>Set</th>
+	<th>Color</th>
+	<th>Price</th>
+	<% @cards = CardsController.query(params) %>
+	<% @cards.each do |card| %>
+	<tr>
+		<td><%= card.name %></td>
+		<td><%= card.set %></td>
+		<td><%= card.color %></td>
+		<td><%= card.price %></td>
+	</tr>
+	<% end %>
+</table>

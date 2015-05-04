@@ -15,5 +15,9 @@ Rails.application.routes.draw do
   get 'cards/office'
 
   get 'home/photopicker'
+
+  post 'home/photopicker'
+
+  get 'home/profile/:name', to: 'home#profile'
  
 end
