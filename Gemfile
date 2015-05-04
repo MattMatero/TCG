@@ -41,6 +41,9 @@ gem 'devise', '~> 3.4.1'
 #jquery
 gem 'jquery_ujs_extended', '~> 0.0.3'
 
+#backoffice
+gem 'activeadmin', '~> 1.0.0.pre1'
+
 group :development, :test  do
     gem 'sqlite3'
 end
