@@ -14,7 +14,6 @@ class HomeController < ApplicationController
     else
       @user = current_user
     end
-
   end
 
   def photopicker
