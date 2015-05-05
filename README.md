@@ -7,7 +7,18 @@ Rails Version: 4.2
 #Installation Guide 
 
 To quickly get a local version of the server running install Ubuntu 14.04.
-Install the proper version of ruby and then run in the command line
+Install the proper version of ruby. To install ruby on ubuntu you can run the command
+
+**sudo apt-get install ruby 2.1.5**
+
+if you already have a version of ruby running on your computer then you should look into
+running a version manager such as RVM or Rbenv. 
+
+For more information visit: [Stackoverflow discussion of RVM](http://tinyurl.com/qcqxp4h)
+
+
+
+Then run in the command line
 
 **gem install rails**
 
@@ -22,6 +33,6 @@ Once completed without errors you are able to run the server.
 **bundle exec rails s**
 
 Once the server is started you can point your browser towards localhost:3000 to view the
-webpage.  
+webpage. 
 
 
