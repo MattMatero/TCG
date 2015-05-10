@@ -1,5 +1,3 @@
-require 'rubygems'
-require 'ImageResize'
 class Card < ActiveRecord::Base
   before_create :resize
 
@@ -25,8 +23,8 @@ class Card < ActiveRecord::Base
     params.require(:Card).permit(:name, :set, :color)
  end
 
- def resize
-    Image.resize(self.image, self.image, 120,120)
- end
+ # def resize
+ #    Image.resize(self.image, self.image, 120,120)
+ # end
 
 end
