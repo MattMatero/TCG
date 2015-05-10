@@ -1,3 +1,33 @@
 $jumbotron-bg: #0081A0;
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+.jumbotron h1{
+  color: #FFFFFF;
+}
+
+.jumobtron p{
+  color: #FFFFFF;
+}
+
+.nav a:hover{
+  color: #FF0000 !important;
+  &:hover {background-color:white;}
+}
+
+.navbar-header a:hover{
+  color: #FF0000 !important;
+  &:hover{ background-color:white;}
+}
+
+
+.panel-default a:hover{
+  color: #FF0000 !important;
+  &:hover{background-color:white;}
+}
+
+.table-striped a:hover{
+  color: #FF0000 !important;
+  &:hover {background-color:white;}
+}
