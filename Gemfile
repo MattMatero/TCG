@@ -45,7 +45,7 @@ gem 'jquery_ujs_extended', '~> 0.0.3'
 gem 'activeadmin', '~> 1.0.0.pre1'
 
 #imageResizing
-gem 'ImageResize', '~> 0.0.5'
+#gem 'ImageResize', '~> 0.0.5'
 
 group :development, :test  do
     gem 'sqlite3'
