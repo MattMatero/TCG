@@ -2,7 +2,7 @@
 
 <h1>Listing Cards</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
@@ -22,14 +22,7 @@
         <td><%= card.price %></td>
         <td><%= card.set %></td>
         <td><%= card.color %></td>
-        <td><%= link_to 'Show', card %></td>
-        <td><%= link_to 'Edit', edit_card_path(card) %></td>
-        <td><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Card', cards_office_path %>
