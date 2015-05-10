@@ -1,7 +1,4 @@
 class Card < ActiveRecord::Base
-  before_create :resize
-
-
   #active admin color selection
   COLORS = {
     'White' => 'white',
