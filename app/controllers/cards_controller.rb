@@ -84,12 +84,27 @@ class CardsController < ApplicationController
   end
 
   def self.query(params)
-    if params[:name].present?
-      @Card = Card.where('name LIKE :name',{:name => "%#{params[:name]}%"})
+    if params[:name].present? && params[:set].present? && params[:color].present?
+      @Card = Card.where('name LIKE :name and release_set = :set and color = :color',
+        {:name => "%#{params[:name]}%",
+         :set => "#{params[:set]}",
+         :color => "#{params[:color]}"})
     elsif params[:set].present? && params[:color].present?
-      @Card = Card.where(:set => params[:set]).where(:color => params[:color])
+      @Card = Card.where(:release_set => params[:set]).where(:color => params[:color])
+    elsif params[:name].present? && params[:set].present?
+      @Card = Card.where('name LIKE :name and release_set = :set',
+      {:name => "%#{params[:name]}%",
+       :set => "#{params[:set]}"
+        })
+    elsif params[:name].present? && params[:color].present?
+      @Card = Card.where('name LIKE :name and color = :color',
+      {:name =>"%#{params[:name]}%",
+       :color => "#{params[:color]}"
+        })
     elsif params[:set].present?
-      @Card = Card.where(:set => params[:set])
+      @Card = Card.where(:release_set => params[:set])
+    elsif !params[:name].present? && !params[:set].present? && !params[:color].present? 
+      @Card = Card.all
     else
       @Card = Card.where(:color => params[:color])
     end
