@@ -101,12 +101,16 @@ class CardsController < ApplicationController
       {:name =>"%#{params[:name]}%",
        :color => "#{params[:color]}"
         })
+    elsif params[:name].present?
+      @Card = Card.where('name LIKE :name',
+      {:name => "%#{params[:name]}%"
+        })
     elsif params[:set].present?
       @Card = Card.where(:release_set => params[:set])
-    elsif !params[:name].present? && !params[:set].present? && !params[:color].present? 
-      @Card = Card.all
-    else
+    elsif params[:color].present? 
       @Card = Card.where(:color => params[:color])
+    else
+      @Card = Card.all
     end
     @Card
   end 
