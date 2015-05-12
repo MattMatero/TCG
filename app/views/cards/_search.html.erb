@@ -1,16 +1,24 @@
-<%= form_tag("./search", method: "get") do %>
-  <%= label_tag(:name, "Name:") %>
-  <%= text_field_tag(:name) %>
-  <br/>
-  <%= label_tag(:set, "Set:") %>
-  <%= text_field_tag(:set) %>
-  <div class="form_row">
-    <label for="color">Color:</label>
-    <% [ 'white', 'blue', 'green', 'black', 'red' ].each do |color| %>
-      <br><%= radio_button_tag 'color', color, @color == color %>
-      <%= color.humanize %>
-    <% end %>
-</div>
-  <%= submit_tag("Search") %>
-<% end %>
+<%= form_for(:card, :html => {:class => 'form-horizontal'}, 
+  :url => "./search", method: "get") do |f| %>
+ <div class="form-group">
+   <label>Name:</label>
+      <%= f.text_field :name, :class => 'form-control' %>
+    <br/>
+    <label>Set:</label>
+    <%= f.text_field :release_set, :class => 'form-control' %>
+    <br/>
 
+    <% @colors = ['Blue','Red','Green','Black', 'White'] %>
+      
+      <% @colors.each do |color| %>
+        <%= f.label "color_#{color.downcase}" do %>
+          <%= f.radio_button :color, color.downcase.humanize %>
+          <%= color.humanize %>
+        <% end %>
+      <% end %>
+
+    <br/>
+
+    <%= f.submit "Search", :class => 'btn btn-primary' %>
+  </div>
+<% end %>
