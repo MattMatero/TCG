@@ -1,11 +1,11 @@
 ActiveAdmin.register Card do
-  permit_params :name, :set, :color, :image,:price
+  permit_params :name, :release_set, :color, :image,:price
 
   index do
     selectable_column
     id_column
     column :name
-    column :set
+    column :release_set
     column :color
     column :image
     column :price
@@ -13,14 +13,14 @@ ActiveAdmin.register Card do
   end
 
   filter :name
-  filter :set
+  filter :release_set
   filter :color
   filter :price
 
   form do |f|
     f.inputs "Admin Details" do
       f.input :name
-      f.input :set
+      f.input :release_set
       f.input(
         :color,
         as: :select,

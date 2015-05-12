@@ -8,11 +8,11 @@
     <%= f.text_field :release_set, :class => 'form-control' %>
     <br/>
 
-    <% @colors = ['Blue','Red','Green','Black', 'White'] %>
+    <% @colors = ['blue','red','green','black', 'white'] %>
       
       <% @colors.each do |color| %>
-        <%= f.label "color_#{color.downcase}" do %>
-          <%= f.radio_button :color, color.downcase.humanize %>
+        <%= f.label "color_#{color}" do %>
+          <%= f.radio_button :color, color.humanize.downcase %>
           <%= color.humanize %>
         <% end %>
       <% end %>

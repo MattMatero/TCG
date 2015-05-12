@@ -84,31 +84,33 @@ class CardsController < ApplicationController
   end
 
   def self.query(params)
-    if params[:name].present? && params[:set].present? && params[:color].present?
+    if params[:card][:name].present? && params[:card][:release_set].present? &&
+       params[:card][:color].present?
       @Card = Card.where('name LIKE :name and release_set = :set and color = :color',
-        {:name => "%#{params[:name]}%",
-         :set => "#{params[:set]}",
-         :color => "#{params[:color]}"})
-    elsif params[:set].present? && params[:color].present?
-      @Card = Card.where(:release_set => params[:set]).where(:color => params[:color])
-    elsif params[:name].present? && params[:set].present?
+        {:name => "%#{params[:card][:name]}%",
+         :release_set => "#{params[:card][:set]}",
+         :color => "#{params[:card][:color]}"})
+    elsif params[:card][:release_set].present? && params[:card][:color].present?
+      @Card = Card.where(:release_set => params[:card][:release_set]).where(
+        :color => params[:card][:color])
+    elsif params[:card][:name].present? && params[:card][:release_set].present?
       @Card = Card.where('name LIKE :name and release_set = :set',
-      {:name => "%#{params[:name]}%",
-       :set => "#{params[:set]}"
+      {:name => "%#{params[:card][:name]}%",
+       :set => "#{params[:card][:release_set]}"
         })
-    elsif params[:name].present? && params[:color].present?
+    elsif params[:card][:name].present? && params[:card][:color].present?
       @Card = Card.where('name LIKE :name and color = :color',
-      {:name =>"%#{params[:name]}%",
-       :color => "#{params[:color]}"
+      {:name =>"%#{params[:card][:name]}%",
+       :color => "#{params[:card][:color]}"
         })
-    elsif params[:name].present?
+    elsif params[:card][:name].present?
       @Card = Card.where('name LIKE :name',
-      {:name => "%#{params[:name]}%"
+      {:name => "%#{params[:card][:name]}%"
         })
-    elsif params[:set].present?
-      @Card = Card.where(:release_set => params[:set])
-    elsif params[:color].present? 
-      @Card = Card.where(:color => params[:color])
+    elsif params[:card][:release_set].present?
+      @Card = Card.where(:release_set => params[:card][:release_set])
+    elsif params[:card][:color].present? 
+      @Card = Card.where(:color => params[:card][:color])
     else
       @Card = Card.all
     end
